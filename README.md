@@ -1,23 +1,29 @@
-# Sistemas Distribuidos Trabalho 1 (UFC Campus Quixad·)
+# Sistemas Distribu√≠dos: trabalho 1 (sockets)
 
-## Desenvolvido por:
- - Dieinison Jack
- - Ronildo Oliveira
- 
-Q1 ñ Baixe e execute os sockets UDP e TCP do livro:
-Acesse: http://www.cdk5.net/wp/extra-material/
-Depois clique em: Supplementary material for Chapter 4
+> Exerc√≠cios de comunica√ß√£o por sockets em Java: UDP, TCP, multicast, calculadora remota, chat bloqueante e n√£o bloqueante (NIO) e servidor com m√∫ltiplos servi√ßos.
 
-Q2 ñ Utilizando UDP, implemente uma calculadora remota que execute as 4 funÁıes
-b·sicas (+, -, *, /). Descreva o formato e o tipo das mensagens (requisiÁ„o - resposta).
-Dica em Java: utilize o mÈtodo split() da classe String para tratar a mensagem.
+![status](https://img.shields.io/badge/status-conclu√≠do-success) ![java](https://img.shields.io/badge/Java-8-blue) ![sockets](https://img.shields.io/badge/java.net%20%2B%20java.nio-sockets-lightgrey)
 
-Q3 ñ Implemente um Chat sobre TCP a partir dos cÛdigos baixados. O Chat pode ser
-entre 2 processos apenas. O que deve ser modificado na classe TCPClient?
+## Sobre
+Trabalho 1 da disciplina de Sistemas Distribu√≠dos (UFC Campus Quixad√°, 2016, professor Paulo Rego), feito com Dieinison Jack. Parte dos c√≥digos base vem do material do livro *Distributed Systems: Concepts and Design* (Coulouris et al.).
 
-Q4 ñ Refatore o Chat para uma vers„o n„o-bloqueante em que as mensagens podem
-ser enviadas a qualquer tempo depois que uma conex„o est· estabelecida.
+| Pacote | Quest√£o |
+|---|---|
+| `q01` | Executar os exemplos de sockets UDP, TCP e multicast do livro |
+| `q02` | Calculadora remota sobre UDP com as quatro opera√ß√µes; mensagem no formato `n1 op n2` |
+| `q03` | Chat entre dois processos sobre TCP |
+| `q04` | Chat n√£o bloqueante com `java.nio` (`Selector`, `SocketChannel`) |
+| `q05` | Segundo servi√ßo no mesmo servidor: cifra/ordena√ß√£o dos caracteres da mensagem |
 
-Q5 ñ Adicione um serviÁo simples, de sua escolha, ao processo servidor. Quais
-modificaÁıes s„o necess·rias para oferecer mais de um serviÁo no mesmo processo?
-Compare essa soluÁ„o com a criaÁ„o de um processo servidor para cada serviÁo.
+## Como executar
+```bash
+javac -d bin $(find src -name "*.java")
+java -cp bin ufc.cc.sd.q02.CalculadoraUDPServer   # e, em outro terminal, o cliente correspondente
+```
+
+## Status
+Conclu√≠do. Trabalho acad√™mico; n√£o recebe manuten√ß√£o.
+
+## Autores
+Ronildo Silva ¬∑ ronildo.comp@gmail.com
+Dieinison Jack
